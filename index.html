@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelas X RPL 2 - Luar Biasa!</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Shortcut Icon -->
+    <link rel="shortcut icon" href="logo1.png" />
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="custom-body">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+      <div class="container-fluid">
+        <img
+          class="img-fluid rounded-circle ms-2 mt-2"
+          src="logo1.png"
+          alt="Logo Kelas X RPL 2"
+          draggable="false"
+          width="50"
+        />
+        <a
+          class="navbar-brand fw-bold ms-3 mt-2 text-dark"
+          href="#"
+          style="font-size: 30px"
+          draggable="false"
+          onclick="showSection('home')"
+          >KELAS X RPL 2</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold">Menu</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul
+              class="navbar-nav ms-auto mb-2 me-5 mb-lg-0"
+              style="font-size: 17px"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link active navbr fw-bold"
+                  aria-current="page"
+                  onclick="showSection('home')"
+                  href="#"
+                  draggable="false"
+                  >Beranda</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active navbr"
+                  aria-current="page"
+                  href="#"
+                  onclick="showSection('anggota')"
+                  draggable="false"
+                  >Anggota</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active navbr"
+                  aria-current="page"
+                  href="#"
+                  onclick="showJadwalTab('harian')"
+                  draggable="false"
+                  >Jadwal</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active navbr"
+                  aria-current="page"
+                  href="#"
+                  onclick="showSection('kesepakatan')"
+                  draggable="false"
+                  >Kesepakatan</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Section Home Start -->
+    <section class="section container py-5 mt-5" id="home">
+      <div class="bg-white rounded-4 shadow-lg p-5">
+        <h2 class="text-center mb-3 fw-bolder display-5" style="color: #3b3b3b">
+          Selamat Datang
+        </h2>
+        <p class="text-center mb-5 lead text-muted">
+          Di Website Resmi Kelas X RPL 2 - SMKN 5 Kab. Tangerang
+        </p>
+
+        <div class="row mb-5 justify-content-center">
+          <!-- Kotak Siswa -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <a
+              href="#"
+              onclick="showSection('anggota'); return false;"
+              class="text-decoration-none d-block h-100"
+            >
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <i class="bi bi-person-fill" style="font-size: 30px"></i>
+                <h3 class="fw-bolder mb-0 mt-2">36</h3>
+                <small class="fw-medium">SISWA</small>
+              </div>
+            </a>
+          </div>
+
+          <!-- Kotak Mata Pelajaran -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <a
+              href="#"
+              onclick="showJadwalTab('harian'); return false;"
+              class="text-decoration-none d-block h-100"
+            >
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <i class="bi bi-book-fill" style="font-size: 30px"></i>
+                <h3 class="fw-bolder mb-0 mt-2">12</h3>
+                <small class="fw-medium">MATA PELAJARAN</small>
+              </div>
+            </a>
+          </div>
+
+          <!-- Kotak Guru -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <a
+              href="#"
+              onclick="showJadwalTab('harian'); return false;"
+              draggable="false"
+              class="col-md-4 col-sm-6 mb-4"
+              style="text-decoration: none"
+            >
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <i class="bi bi-person-badge-fill" style="font-size: 30px"></i>
+                <h3 class="fw-bolder mb-0 mt-2">13</h3>
+                <small class="fw-medium">GURU PENGAJAR</small>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="rounded-4 p-5 about mb-5 shadow-sm">
+          <h2 class="text-center fw-bolder" style="color: #3b3b3b">
+            Tentang X RPL 2
+          </h2>
+          <hr style="width: 50px; margin: 15px auto; height: 3px" />
+          <p class="text-center mt-3" style="color: #666; font-size: 1.1em">
+            Kelas X RPL 2 adalah kelas yang berada di SMKN 5 Kabupaten Tangerang
+            dengan jurusan Rekayasa Perangkat Lunak. Kami adalah generasi muda
+            yang siap menghadapi tantangan dunia teknologi dengan motto
+            <strong style="color: #9680bf">"Luar Biasa!"</strong>
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-12 mb-4">
+            <div class="bg-white shadow-sm rounded-4 p-4 text-center h-100">
+              <i
+                class="bi bi-code-slash text-info"
+                style="font-size: 48px; color: #516fb8"
+              ></i>
+              <h3 class="fw-bold fs-5 mt-3" style="color: rgb(61, 61, 61)">
+                Programming Excellence
+              </h3>
+              <p class="mt-2 mb-4 text-muted">
+                Fokus pada pengembangan kemampuan coding dan pemrograman dengan
+                berbagai bahasa seperti HTML, CSS, JavaScript, PHP, dan Python.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-12 mb-4">
+            <div class="bg-white shadow-sm rounded-4 p-4 text-center h-100">
+              <i
+                class="bi bi-people-fill text-success"
+                style="font-size: 48px; color: #00b36b"
+              ></i>
+              <h3 class="fw-bold fs-5 mt-3" style="color: rgb(56, 56, 56)">
+                Syntax Squad
+              </h3>
+              <p class="mt-2 mb-5 text-muted">
+                Sebuah tim kreatif yang menguasai beragam bahasa pemrograman,
+                mulai dari HTML, CSS dan JavaScript hingga Python dan Java.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-12 mb-4">
+            <div class="bg-white shadow-sm rounded-4 p-4 text-center h-100">
+              <i
+                class="bi bi-trophy-fill text-warning"
+                style="font-size: 48px; color: #ffa726"
+              ></i>
+              <h3 class="fw-bold fs-5 mt-3" style="color: rgb(56, 56, 56)">
+                Achievement Oriented
+              </h3>
+              <p class="mt-2 mb-5 text-muted">
+                Mengejar prestasi akademik dan non-akademik melalui berbagai
+                kompetisi dan lomba di tingkat sekolah maupun regional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Home End -->
+
+    <!-- Section Anggota Start -->
+    <section class="section container py-5 mt-5 d-none" id="anggota">
+      <div class="bg-white rounded-4 shadow-lg p-5">
+        <h2
+          class="text-center mb-4 fw-bolder display-5"
+          style="color: rgb(56, 56, 56)"
+        >
+          ANGGOTA X RPL 2
+        </h2>
+        <hr
+          class="mb-5"
+          style="
+            border: 0;
+            height: 4px;
+            background-color: #bf96ce;
+            opacity: 1;
+            width: 100%;
+            margin: auto;
+          "
+        />
+
+        <div class="row g-4">
+          <div class="col-12 mb-4">
+            <div class="text-white rounded-4 p-4 text-center purple shadow-sm">
+              <i class="bi bi-person-fill" style="font-size: 32px"></i>
+              <h3 class="fw-bolder mb-1 fs-4">Senja Annisah S. Kom.</h3>
+              <small class="fw-medium" style="color: #f0f0f0"
+                >Wali Kelas X RPL 2</small
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Abu Samah Abdul Dzohir</h3>
+              <small class="fw-medium">Ketua Kelas</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 02</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Raffa Alif Afrilian</h3>
+              <small class="fw-medium">Wakil Ketua</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 29</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Dian Ayu Oktavia</h3>
+              <small class="fw-medium">Sekretaris 1</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 13</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Bayu Pratama</h3>
+              <small class="fw-medium">Sekretaris 2</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 09</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Alisa Maulida</h3>
+              <small class="fw-medium">Bendahara 1</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 05</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Medisa Martin</h3>
+              <small class="fw-medium">Bendahara 2</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 17</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Kurnia</h3>
+              <small class="fw-medium">Seksi Kebersihan 1</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 15</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Anggi Apriliansyah</h3>
+              <small class="fw-medium">Seksi Kebersihan 2</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 06</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Nur Abdul Rozaq</h3>
+              <small class="fw-medium">Seksi Keamanan 1</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 28</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <div
+              class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+            >
+              <h3 class="fw-bold mb-2 fs-5">Chaidir Alpasha</h3>
+              <small class="fw-medium">Seksi Keamanan 2</small>
+              <br />
+              <small style="color: #d4d4d4">No. Absen: 10</small>
+            </div>
+          </div>
+
+          <div class="col-12 anggota-lain">
+            <h4
+              class="text-center mb-1 fw-bold"
+              style="color: #9680bf; letter-spacing: 1px"
+            >
+              Daftar Anggota Lain (36 Siswa)
+            </h4>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Abdul Halim</h3>
+                <small style="color: #d4d4d4">No. Absen: 01</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Adli Maulana</h3>
+                <small style="color: #d4d4d4">No. Absen: 03</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Ahmad Ibnul Qoyyim</h3>
+                <small style="color: #d4d4d4">No. Absen: 04</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Asyarafa Dzikrillah</h3>
+                <small style="color: #d4d4d4">No. Absen: 07</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Avreza Fendi Pratama</h3>
+                <small style="color: #d4d4d4">No. Absen: 08</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Cristina Sandi Dely Silaban</h3>
+                <small style="color: #d4d4d4">No. Absen: 11</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Depita Kalyani</h3>
+                <small style="color: #d4d4d4">No. Absen: 12</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Furqon</h3>
+                <small style="color: #d4d4d4">No. Absen: 14</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">M. Kosim Padli</h3>
+                <small style="color: #d4d4d4">No. Absen: 16</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Muhamad Eko Saputra</h3>
+                <small style="color: #d4d4d4">No. Absen: 18</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Muhamad Iqbal Maulana</h3>
+                <small style="color: #d4d4d4">No. Absen: 19</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Muhammad Al Farizzi</h3>
+                <small style="color: #d4d4d4">No. Absen: 20</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Muhammad Farhan Fadillah</h3>
+                <small style="color: #d4d4d4">No. Absen: 21</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Muhammad Haqqin Nazil</h3>
+                <small style="color: #d4d4d4">No. Absen: 22</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Muhammad Naasiq Al Ahsani</h3>
+                <small style="color: #d4d4d4">No. Absen: 23</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Muhammad Raziq Farras</h3>
+                <small style="color: #d4d4d4">No. Absen: 24</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Nabiya Fredella</h3>
+                <small style="color: #d4d4d4">No. Absen: 25</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Nathan Harith Arrarya</h3>
+                <small style="color: #d4d4d4">No. Absen: 26</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Naufal Azfar Riffatin</h3>
+                <small style="color: #d4d4d4">No. Absen: 27</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Regina Artha Novia</h3>
+                <small style="color: #d4d4d4">No. Absen: 30</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Reza Aditya Gunawan</h3>
+                <small style="color: #d4d4d4">No. Absen: 31</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Riza Akbar Suwarno</h3>
+                <small style="color: #d4d4d4">No. Absen: 32</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Rizky Dwiraya</h3>
+                <small style="color: #d4d4d4">No. Absen: 33</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Sam Rusli</h3>
+                <small style="color: #d4d4d4">No. Absen: 34</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Susilo Agustian</h3>
+                <small style="color: #d4d4d4">No. Absen: 35</small>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div
+                class="text-white rounded-4 p-4 text-center purple shadow-sm h-100"
+              >
+                <h3 class="fw-bold mb-2 fs-5">Wisnu Ramadhan</h3>
+                <small style="color: #d4d4d4">No. Absen: 36</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Anggota End -->
+
+    <!-- Section Jadwal Start -->
+    <section class="section container py-5 mt-5 d-none" id="jadwal">
+      <div class="bg-white rounded-4 shadow-lg p-5 schedule-wrapper">
+        <h2
+          class="text-center mb-4 fw-bolder display-5"
+          style="color: rgb(56, 56, 56)"
+        >
+          JADWAL PELAJARAN & JADWAL PIKET
+        </h2>
+        <hr
+          class="mb-5"
+          style="
+            border: 0;
+            height: 4px;
+            background-color: #bf96ce;
+            opacity: 1;
+            width: 100%;
+            margin: auto;
+          "
+        />
+
+        <ul
+          class="nav nav-pills nav-fill mb-5 p-2 rounded-3 shadow-sm custom-pill-theme gap-2"
+          id="jadwal-tabs"
+          role="tablist"
+          style="background-color: #f8f9fa"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active fw-bold py-2"
+              id="harian-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#harian"
+              type="button"
+              role="tab"
+              aria-controls="harian"
+              aria-selected="true"
+            >
+              Jadwal Pelajaran
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link fw-bold py-2"
+              id="piket-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#piket"
+              type="button"
+              role="tab"
+              aria-controls="piket"
+              aria-selected="false"
+            >
+              Jadwal Piket
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tab Menu in Jadwal Start -->
+        <div class="tab-content" id="jadwal-tabContent">
+          <!-- Jawdal Pelajaran Tab Menu Start -->
+          <div
+            class="tab-pane fade show active"
+            id="harian"
+            role="tabpanel"
+            aria-labelledby="harian-tab"
+            tabindex="0"
+          >
+            <div class="schedule-header">
+              <h3 class="fw-bolder" id="dayName">Loading...</h3>
+              <p id="dateInfo" class="text-muted fw-medium">Loading...</p>
+              <h5 class="fw-semibold" style="color: #9680bf; font-size: 1rem">
+                Kelas X RPL 2
+              </h5>
+            </div>
+            <div class="text-center mb-4">
+              <hr />
+              <h4 class="fw-bolder mt-3 mb-4" style="font-size: 1.6rem">
+                <i class="bi bi-calendar-check me-2"></i>Jadwal Hari Ini
+              </h4>
+            </div>
+            <div id="todaySchedule" class="mt-3"></div>
+            <hr class="my-5" />
+            <div class="text-center mb-4">
+              <h4 class="fw-bolder" style="font-size: 1.6rem">
+                <i class="bi bi-table me-2"></i>Jadwal Pelajaran Mingguan
+              </h4>
+              <h6 class="text-muted fw-medium" style="font-size: 1rem">
+                Seluruh Mata Pelajaran
+              </h6>
+            </div>
+            <div id="daysGrid" class="days-grid"></div>
+            <div class="table-responsive mt-4">
+              <table
+                class="table table-bordered table-schedule align-middle shadow-sm"
+              >
+                <tbody id="weeklyTable"></tbody>
+              </table>
+            </div>
+            <p class="intruksi"><i>Geser ke kiri untuk melihat Jadwal lebih lengkap</i></p>
+          </div>
+          <!-- Jawdal Pelajaran Tab Menu End -->
+
+          <!-- Jawal Piket Tab Menu Start -->
+          <div
+            class="tab-pane fade"
+            id="piket"
+            role="tabpanel"
+            aria-labelledby="piket-tab"
+            tabindex="0"
+          >
+            <div class="row g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="text-white rounded-4 p-4 purple shadow h-100">
+                  <h3 class="fw-bolder mb-3 fs-3 text-center">
+                    <i class="bi bi-calendar-day me-2"></i>Senin
+                  </h3>
+                  <hr
+                    style="
+                      border: 0;
+                      height: 2px;
+                      opacity: 1;
+                      background-color: rgba(255, 255, 255, 0.3);
+                    "
+                  />
+                  <ul class="list-unstyled fw-medium mt-4">
+                    <li class="mb-2 fs-5">Avreza Fendi P.</li>
+                    <li class="mb-2 fs-5">Furqon</li>
+                    <li class="mb-2 fs-5">Nathan Harith A.</li>
+                    <li class="mb-2 fs-5">Riza Akbar S.</li>
+                    <li class="mb-2 fs-5">Sam Rusli</li>
+                    <li class="mb-2 fs-5">Abu Samah A. D.</li>
+                    <li class="fs-5">M. Eko Saputra</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="text-white rounded-4 p-4 purple shadow h-100">
+                  <h3 class="fw-bolder mb-3 fs-3 text-center">
+                    <i class="bi bi-calendar-day me-2"></i>Selasa
+                  </h3>
+                  <hr
+                    style="
+                      border: 0;
+                      height: 2px;
+                      opacity: 1;
+                      background-color: rgba(255, 255, 255, 0.3);
+                    "
+                  />
+                  <ul class="list-unstyled fw-medium mt-4">
+                    <li class="mb-2 fs-5">Alisa Maulida</li>
+                    <li class="mb-2 fs-5">Christina Sandi D. S.</li>
+                    <li class="mb-2 fs-5">M. Iqbal Maulana</li>
+                    <li class="mb-2 fs-5">M. Farhan Fadillah</li>
+                    <li class="mb-2 fs-5">Raffa Alif A.</li>
+                    <li class="mb-2 fs-5">Ahmad Ibnul Q.</li>
+                    <li class="fs-5">Regina Artha N.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="text-white rounded-4 p-4 purple shadow h-100">
+                  <h3 class="fw-bolder mb-3 fs-3 text-center">
+                    <i class="bi bi-calendar-day me-2"></i>Rabu
+                  </h3>
+                  <hr
+                    style="
+                      border: 0;
+                      height: 2px;
+                      opacity: 1;
+                      background-color: rgba(255, 255, 255, 0.3);
+                    "
+                  />
+                  <ul class="list-unstyled fw-medium mt-4">
+                    <li class="mb-2 fs-5">Wisnu Ramadhan</li>
+                    <li class="mb-2 fs-5">Kurnia</li>
+                    <li class="mb-2 fs-5">Abdul Halim</li>
+                    <li class="mb-2 fs-5">Bayu Pratama</li>
+                    <li class="mb-2 fs-5">Dian Ayu O.</li>
+                    <li class="mb-2 fs-5">Adli Maulana</li>
+                    <li class="fs-5">Nur Abdul Rozaq</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="text-white rounded-4 p-4 purple shadow h-100">
+                  <h3 class="fw-bolder mb-3 fs-3 text-center">
+                    <i class="bi bi-calendar-day me-2"></i>Kamis
+                  </h3>
+                  <hr
+                    style="
+                      border: 0;
+                      height: 2px;
+                      opacity: 1;
+                      background-color: rgba(255, 255, 255, 0.3);
+                    "
+                  />
+                  <ul class="list-unstyled fw-medium mt-4">
+                    <li class="mb-2 fs-5">Naufal Azfar R.</li>
+                    <li class="mb-2 fs-5">Reza Aditya G.</li>
+                    <li class="mb-2 fs-5">Rizky Dwiarya</li>
+                    <li class="mb-2 fs-5">Susilo Agustian</li>
+                    <li class="mb-2 fs-5">Anggi Apriliansyah</li>
+                    <li class="mb-2 fs-5">Asyarafa D.</li>
+                    <li class="mb-2 fs-5">Chaidir A.</li>
+                    <li class="fs-5">M. Raziq Farras</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="text-white rounded-4 p-4 purple shadow h-100">
+                  <h3 class="fw-bolder mb-3 fs-3 text-center">
+                    <i class="bi bi-calendar-day me-2"></i>Jum'at
+                  </h3>
+                  <hr
+                    style="
+                      border: 0;
+                      height: 2px;
+                      opacity: 1;
+                      background-color: rgba(255, 255, 255, 0.3);
+                    "
+                  />
+                  <ul class="list-unstyled fw-medium mt-4">
+                    <li class="mb-2 fs-5">Depita Kalyani</li>
+                    <li class="mb-2 fs-5">M. Kosim Padli</li>
+                    <li class="mb-2 fs-5">Medisa Martin</li>
+                    <li class="mb-2 fs-5">M. Al Farizzi</li>
+                    <li class="mb-2 fs-5">Nabiya Fredella</li>
+                    <li class="mb-2 fs-5">M. Naasiq Al Ahsani</li>
+                    <li class="fs-5">M. Haqqin N.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Jawal Piket Tab Menu End -->
+        </div>
+        <!-- Tab Menu in Jadwal End -->
+      </div>
+    </section>
+    <!-- Section Jadwal End -->
+
+    <!-- Section Kesepakatan Start -->
+    <section class="section container py-5 mt-5 d-none" id="kesepakatan">
+      <div class="bg-white rounded-4 shadow-lg p-5">
+        <h2
+          class="text-center mb-4 fw-bolder display-5"
+          style="color: rgb(56, 56, 56)"
+        >
+          KESEPAKATAN KELAS
+        </h2>
+        <hr
+          class="mb-5"
+          style="
+            border: 0;
+            height: 4px;
+            background-color: #bf96ce;
+            opacity: 1;
+            width: 100%;
+            margin: auto;
+          "
+        />
+
+        <div class="row g-3 text-center mb-5">
+          <div class="col-md-4 col-sm-6">
+            <div
+              class="purple text-white rounded-4 p-4 h-100 d-flex flex-column justify-content-center shadow-sm"
+            >
+              <p class="fw-bolder mb-0 fs-6">
+                DATANG TEPAT WAKTU.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div
+              class="purple text-white rounded-4 p-4 h-100 d-flex flex-column justify-content-center shadow-sm"
+            >
+              <p class="fw-bolder mb-0 fs-6">
+                MENJAGA SIKAP DAN UCAPAN TERHADAP GURU DAN TEMAN.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div
+              class="purple text-white rounded-4 p-4 h-100 d-flex flex-column justify-content-center shadow-sm"
+            >
+              <p class="fw-bolder mb-0 fs-6">
+                MENARUH SEPATU DENGAN TERTIB DAN RAPIH.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div
+              class="purple text-white rounded-4 p-4 h-100 d-flex flex-column justify-content-center shadow-sm"
+            >
+              <p class="fw-bolder mb-0 fs-6">
+                MENJAGA KEBERSIHAN KELAS DAN KERAPIAN BERPAKAIAN.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div
+              class="purple text-white rounded-4 p-4 h-100 d-flex flex-column justify-content-center shadow-sm"
+            >
+              <p class="fw-bolder mb-0 fs-6">
+                BERDOA SEBELUM MEMULAI PELAJARAN DAN SEBELUM PULANG.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div
+              class="purple text-white rounded-4 p-4 h-100 d-flex flex-column justify-content-center shadow-sm"
+            >
+              <p class="fw-bolder mb-0 fs-6">
+                JIKA INGIN KE TOILET TIDAK BOLEH LEBIH DARI 2 ORANG.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div
+              class="purple text-white rounded-4 p-4 h-100 d-flex flex-column justify-content-center shadow-sm"
+            >
+              <p class="fw-bolder mb-0 fs-6">
+                TIDAK BOLEH MENGGUNAKAN HANDPHONE SAAT JAM PELAJARAN (KECUALI DI IZINKAN GURU).
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <div
+              class="purple text-white rounded-4 p-4 h-100 d-flex flex-column justify-content-center shadow-sm"
+            >
+              <p class="fw-bolder mb-0 fs-6">
+                TIDAK PIKET DI KENAKAN SANKSI.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-12">
+            <div
+              class="purple text-white rounded-4 p-4 h-100 d-flex flex-column justify-content-center shadow-sm"
+            >
+              <p class="fw-bolder mb-0 fs-6">
+                JIKA TIDAK MEMBAYAR UANG KAS DI KENAKAN SANKSI.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="konsekuensi-content mt-5">
+          <h3 class="fs-4 fw-bold mb-3" style="color: #9680bf">
+            <i class="bi bi-shield-fill-exclamation me-2"></i>Konsekuensi Jika Melanggar:
+          </h3>
+          <p class="fw-medium text-dark">
+            KONSEKUENSI JIKA TERLAMBAT MASUK KELAS DAN KELAS TIDAK BERSIH PUSH
+            UP 20x UNTUK LAKI-LAKI DAN SQUAT JUMP 20x UNTUK PEREMPUAN.
+            UNTUK KESEPAKATAN LAINNYA MENYESUAIKAN.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Section Kesepakatan End -->
+
+    <!-- Footer Start -->
+    <footer class="text-white mt-5 pt-5 pb-3 shadow-lg">
+      <div class="container">
+        <div class="row align-items-center text-center text-md-start">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <h2 class="fw-bolder" style="font-family: 'Montserrat', sans-serif">
+              Kelas X RPL 2
+            </h2>
+            <i class="fw-light" style="color: #bdc3c7">"RPL! Luarbiasa!"</i>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div
+              class="badge rounded-pill p-3 fw-medium"
+              style="
+                background-color: rgba(255, 255, 255, 0.15);
+                transition: background-color 0.3s;
+              "
+              onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.25)'"
+              onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.15)'"
+            >
+              <a
+                class="text-white text-decoration-none"
+                href="https://www.instagram.com/https.xrpl2?igsh=MW5kaDduMXVycTVqaA=="
+              >
+                <i class="bi bi-instagram me-2"></i>@https.xrpl2
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="ms-4 me-4" style="border-color: rgba(255, 255, 255, 0.1)" />
+      <p class="text-center" style="color: #bdc3c7; font-size: 0.9em">
+        &copy; 2025 Kelas X RPL 2. All rights reserved.
+      </p>
+    </footer>
+    <!-- Footer Start -->
+
+    <div
+      class="modal fade"
+      id="teacherProfileModal"
+      tabindex="-1"
+      aria-labelledby="teacherProfileModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header modal-header-custom p-4 pb-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <div class="text-center">
+              <img
+                id="modalProfileImg"
+                src="logo2.png"
+                alt="Foto Guru"
+                class="modal-profile-img"
+              />
+              <h5 class="modal-title" id="modalName">Nama Guru Lengkap</h5>
+              <p
+                class="lead"
+                id="modalQuote"
+                style="font-style: italic; font-size: 1rem; margin-bottom: 5px"
+              ></p>
+            </div>
+          </div>
+
+          <div class="modal-body p-4">
+            <div class="row">
+              <div class="col-md-5 border-end">
+                <h6 class="fw-bold" style="color: #bf96ce">
+                  <i class="bi bi-book me-2"></i> Mata Pelajaran
+                </h6>
+                <p id="modalSubject" class="text-secondary"></p>
+              </div>
+              <div class="col-md-7">
+                <h6 class="fw-bold" style="color: #bf96ce">
+                  <i class="bi bi-person-circle me-2"></i> Profil Singkat &
+                  Pengalaman
+                </h6>
+                <p id="modalExperience" class="text-secondary text-justify"></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- My Java Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
