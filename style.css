@@ -1,0 +1,304 @@
+/* Font & Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Special+Elite&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+body {
+  font-family: "Source Sans 3", sans-serif;
+}
+.custom-body {
+  background: linear-gradient(135deg, #bf96ce 35%, #9680bf 60%, #516fb8 100%);
+  min-height: 100vh;
+}
+
+.purple {
+  background: linear-gradient(135deg, #bf96ce 0%, #9680bf 100%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.purple:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(150, 128, 191, 0.4);
+}
+
+.about {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 150, 206, 0.1) 0%,
+    rgba(150, 128, 191, 0.1) 100%
+  );
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* JADWAL PELAJARAN HARIAN & MINGGUAN  */
+
+.schedule-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.schedule-header h4 {
+  font-weight: 700;
+  color: #3b3b3b;
+}
+.schedule-header h6 {
+  color: #888;
+}
+
+/* <== CARD HARI START ==> */
+.days-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.day-card {
+  flex: 1 1 calc(20% - 10px);
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.day-card:hover {
+  background: #eef3ff;
+  transform: translateY(-3px);
+}
+.day-card.active {
+  background: #00b36b;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 179, 107, 0.3);
+}
+.day-card.active strong {
+  color: #fff;
+}
+.day-card small {
+  display: block;
+  font-size: 13px;
+  color: #555;
+}
+/* <== CARD HARI END ==> */
+
+/* <== Tabel Jadwal Mingguan ==> */
+.table-schedule {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.table-schedule th {
+  background: #f4f4f4;
+  color: #555;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.table-schedule td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+.table-schedule td:hover {
+  background-color: #f9fbfa;
+}
+
+/* Line Right Jadwal Mingguan */
+.today-lesson {
+  background-color: #d8f5e4 !important;
+  border-bottom: 1px solid #00b36b !important;
+  border-right: 1px solid #00b36b !important;
+}
+
+/* Istirahat */
+.break-cell {
+  background: linear-gradient(135deg, #ffa726, #ef6c00);
+  color: #fff !important;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 1px;
+}
+
+/* Kosong */
+.empty-cell {
+  background-color: #f3f4f6;
+  color: #777;
+  font-style: italic;
+}
+
+/* <=== JADWAL HARI INI ===> */
+#todaySchedule {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.schedule-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  background: #f9fafb;
+  padding: 12px 18px;
+  border-left: 4px solid #e5e7eb;
+  border: 1px solid #e2e2e2;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.schedule-card:hover {
+  background: #f0f5ff;
+  transform: translateY(-2px);
+}
+.schedule-card.active {
+  background: linear-gradient(90deg, #00b36b, #00945c);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 179, 107, 0.3);
+}
+.schedule-card.break {
+  background: linear-gradient(135deg, #ffa726, #ef6c00);
+  color: #fff;
+}
+.schedule-card.empty {
+  background: #f3f4f6;
+  color: #888;
+}
+
+/* Dot kanan */
+.schedule-card::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #d0d0d0;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.schedule-card.active::after {
+  background-color: #00b36b;
+  transform: translateY(-50%) scale(1.2);
+}
+.schedule-card.break::after {
+  background-color: #ff9800;
+}
+.schedule-card.empty::after {
+  background-color: #bbb;
+}
+
+/* Waktu dan Jadwal Pelajaran */
+.schedule-card .time-section {
+  flex: 0 0 80px;
+  text-align: left;
+}
+.schedule-card .time {
+  font-weight: 600;
+  font-size: 14px;
+}
+.schedule-card .time-range {
+  font-size: 12px;
+  color: inherit;
+  opacity: 0.8;
+}
+.schedule-card .subject-section {
+  flex: 1;
+  margin-left: 10px;
+}
+.schedule-card .subject-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+.schedule-card .subject-info {
+  font-size: 13px;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.anggota-lain {
+  margin-top: 70px;
+}
+
+/* <=== Konsekuensi Box ===> */
+.konsekuensi-content {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-left: 8px solid #bf96ce;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.custom-pill-theme .nav-link {
+  color: #795796;
+  background-color: transparent;
+  border: 1px solid #79579633;
+  transition: all 0.3s ease;
+}
+
+.custom-pill-theme .nav-link.active,
+.custom-pill-theme .nav-link:hover {
+  color: white;
+  background-color: #bf96ce;
+  border-color: #bf96ce;
+  box-shadow: 0 4px 6px rgba(191, 150, 206, 0.4);
+}
+
+.custom-pill-theme .nav-link:not(.active):hover {
+  background-color: #f3e9f7;
+  color: #795796;
+}
+
+.offcanvas-body ul li .hover {
+  background-color: #bf96ce;
+  color: white;
+  border-radius: 10px;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.intruksi {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .intruksi {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+  }
+}
+
+/* Untuk mobile yang lebih kecil */
+@media (max-width: 480px) {
+  .intruksi {
+    font-size: 0.85rem;
+    margin-top: 8px;
+  }
+}
